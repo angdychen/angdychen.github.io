@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Linux常用命令之一 ：scp 跨机远程拷贝 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="scp是secure copy的简写，用于远程文件拷贝(cp复制命令和其类似，不过cp命令只是在本机内进行拷贝，不能跨机器进行文件传输)，而且scp传输是加密的，常用于本地与服务器间文件的传递。命令格式：scp [参数] [原路径] [目标路径]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用命令之一 ：scp 跨机远程拷贝">
+<meta property="og:url" content="http://yoursite.com/2016/09/15/Linux常用命令之一：scp 远程拷贝/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="scp是secure copy的简写，用于远程文件拷贝(cp复制命令和其类似，不过cp命令只是在本机内进行拷贝，不能跨机器进行文件传输)，而且scp传输是加密的，常用于本地与服务器间文件的传递。命令格式：scp [参数] [原路径] [目标路径]">
+<meta property="og:updated_time" content="2017-01-05T16:15:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Linux常用命令之一 ：scp 跨机远程拷贝">
+<meta name="twitter:description" content="scp是secure copy的简写，用于远程文件拷贝(cp复制命令和其类似，不过cp命令只是在本机内进行拷贝，不能跨机器进行文件传输)，而且scp传输是加密的，常用于本地与服务器间文件的传递。命令格式：scp [参数] [原路径] [目标路径]">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -24,9 +28,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -37,8 +38,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -239,77 +240,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-为Hexo博客添加打赏功能" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/20/为Hexo博客添加打赏功能/" class="article-date">
-      <time datetime="2016-09-20T15:36:34.000Z" itemprop="datePublished">2016-09-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/20/为Hexo博客添加打赏功能/">Hexo博客美化之一：添加打赏功能</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>为hexo博客添加打赏功能，以<a href="https://github.com/luuman/hexo-theme-spfk">spfk主题</a>为例，其他主题方法类似。基本思路是将微信和支付宝的收款二维码放到每篇文章页面的最后，打赏的时候扫描二维码即可。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo博客美化/">Hexo博客美化</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/打赏功能/">打赏功能</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/09/20/为Hexo博客添加打赏功能/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Linux常用命令之一：scp 远程拷贝" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux常用命令之一：scp 远程拷贝" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/" class="article-date">
@@ -325,127 +256,282 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/">Linux常用命令之一 ：scp 跨机远程拷贝</a>
+    <h1 class="article-title" itemprop="name">
+      Linux常用命令之一 ：scp 跨机远程拷贝
     </h1>
   
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong>scp</strong>是secure copy的简写，用于远程文件拷贝(cp复制命令和其类似，不过cp命令只是在本机内进行拷贝，不能跨机器进行文件传输)，而且scp传输是加密的，常用于本地与服务器间文件的传递。</br><br><strong><em>命令格式：scp [参数] [原路径] [目标路径]</em></strong></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/Linux/">Linux</a>
     </div>
 
 
-      
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux常用命令/">Linux常用命令</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-设计模式之一" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/13/设计模式之一/" class="article-date">
-      <time datetime="2016-09-12T17:25:21.000Z" itemprop="datePublished">2016-09-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/13/设计模式之一/">设计模式之一：单例模式</a>
-    </h1>
-  
-
-      </header>
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>这是关于JavaScript设计模式系列文章的第一篇。1995年，Erich Gamma, Richard Helm, Ralph Johnson和John Vlissides（有名的四人组，译注：The Gang of Four, 后文统称GoF）出版了《设计模式：可复用面向对象软件的基础》，一本为软件架构和设计难题提供一系列解决方案的书。书中同时为这些解决方案（译注：即各种设计模式）提供了一份词汇参照。如果你感兴趣可以在<a href="http://en.wikipedia.org/wiki/Design_Patterns">维基百科</a>上了解更多。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/翻译/">翻译</a>
-    </div>
+        <p><strong>scp</strong>是secure copy的简写，用于远程文件拷贝(cp复制命令和其类似，不过cp命令只是在本机内进行拷贝，不能跨机器进行文件传输)，而且scp传输是加密的，常用于本地与服务器间文件的传递。<br><br><strong><em>命令格式：scp [参数] [原路径] [目标路径]</em></strong></p>
+ <a id="more"></a>
+<p></p><p></p>
+<h2 id="命令格式："><a href="#命令格式：" class="headerlink" title="命令格式："></a>命令格式：</h2><pre><code>命令格式：
+        scp [参数] [原路径] [目标路径]
+命令参数:
+        -1 强制scp命令使用协议ssh1
+        -2 强制scp命令使用协议ssh2
+        -4 强制scp命令只使用IPv4寻址
+        -6 强制scp命令只使用IPv6寻址
+        -B 使用批处理模式（传输过程中不询问传输口令或短语）
+        -C 允许压缩。（将-C标志传递给ssh，从而打开压缩功能）
+        -p 留原文件的修改时间，访问时间和访问权限。
+        -q 不显示传输进度条。
+        -r 递归复制整个目录。
+        -v 详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。
+        这些信息用于调试连接，验证和配置问题。
+        -c cipher 以cipher将数据传输进行加密，这个选项将直接传递
+        ssh。
+        -F ssh_config 指定一个替代的ssh配置文件，此参数直接传递
+        ssh。
+        -i identity_file 从指定文件中读取传输时使用的密钥文件，
+        此参数直接传递给ssh。
+        -l limit 限定用户所能使用的带宽，以Kbit/s为单位。
+        -o ssh_option 如果习惯于使用ssh_config(5)中的参数传递方式，
+        -P port 注意是大写的P, port是指定数据传输用到的端口号
+        -S program 指定加密传输时所使用的程序。此程序必须能够理解
+        ssh(1)的    选项。
+</code></pre><p></p><p></p>
+<h2 id="使用范例"><a href="#使用范例" class="headerlink" title="使用范例"></a>使用范例</h2><p><strong><em>1.从本地将文件拷贝到服务器中</em></strong>    </p>
+<p><code>scp local_file remote_username@remote_ip:/remote_floder</code>      </p>
+<p> scp /tmp/demo.txt root@123.123.123.123:/usr/<br>说明：复制本地/tmp/目录下的文件demo.txt到远程服务器123.123.123.123的/usr/目录下</p>
+<p> <strong><em>2.从本地将整个文件夹拷贝到服务器中</em></strong> </p>
+<p> <code>scp -r local_floder remote_username@remote_ip:/remote_floder</code> </p>
+<p>  scp -r /tmp/demo/   root@123.123.123.123:/usr/<br> 说明：复制本地/tmp/目录下的整个demo文件夹录下到远程服务器123.123.123.123的/usr/目录下   </p>
+<p> <strong><em>3.从远程将文件夹拷贝到本机</em></strong> </p>
+<p> <code>scp remote_username@remote_ip:/remote_file /tmp/</code> </p>
+<p>  scp root@123.123.123.123:/usr/demo.txt  /tmp/<br> 说明：将远程远程服务器123.123.123.123中/usr/目录下的demo.txt文件复制到本地/usr/目录下</p>
+<p> <strong><em>4.从远程将整个文件夹拷贝到本机中</em></strong> </p>
+<p> <code>scp -r remote_username@remote_ip:/remote_floder /tmp/demo/</code> </p>
+<p>  scp -r root@123.123.123.123:/usr  /tmp/demo/<br> 说明：将远程服务器123.123.123.123的/usr/整个目录全部复制到tmp/demo目录下</p>
 
-
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/09/13/设计模式之一/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/">Linux常用命令之一 ：scp 跨机远程拷贝</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Andy Chen 的个人博客">Andy Chen</a></p>
+        <p><span>发布时间:</span>2016年09月15日 - 10时25分</p>
+        <p><span>最后更新:</span>2017年01月06日 - 00时15分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/" title="Linux常用命令之一 ：scp 跨机远程拷贝">http://yoursite.com/2016/09/15/Linux常用命令之一：scp 远程拷贝/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/15/Linux常用命令之一：scp 远程拷贝/　　作者: Andy Chen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
   
+    <a href="/2016/09/20/为Hexo博客添加打赏功能/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Hexo博客美化之一：添加打赏功能
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/13/设计模式之一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式之一：单例模式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+  
+  <! -- 添加捐赠模块 -->
+<div class ="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <button id="donateButton" onclick="donate()">
+        	<span id="donateSpan" onmouseover="overSpan()" onmouseout="outSpan()">
+        	赏
+        	</span>
+        </button>
+       	<span class="donate_txt">
+       		&uarr;<br>
+	   		我知道你不会点的，但是万一呢？万一点了呢？
+        </span>
+        <br>
+     </div>  
+    <div id="donateImage" display:none>
+		<!-- 自己的支付宝打赏二维码图片 -->
+		<img src="/img/alipay.jpg" alt="支付宝打赏"> 
+		<!-- 自己的支付宝打赏二维码图片 -->
+		<img src="/img/wechatpay.jpg" alt="微信打赏">  
+    </div>
+
+	<script type="text/javascript">
+		<!-- 打赏按钮点击效果 -->
+		function donate(){
+			var donateImage = document.getElementById("donateImage");
+			if(donateImage.style.display!='block')
+			{
+				donateImage.style.display='block';
+				overSpan();
+			}
+			else
+			{
+				donateImage.style.display='none';
+				outSpan();
+			}
+		}
+		<!-- 打赏鼠标移入效果 -->
+		function overSpan(){
+			var donateSpan = document.getElementById("donateSpan");
+			donateSpan.style.color='rgb(236,96,0)';
+			donateSpan.style.background='rgb(204,204,204)';
+		}
+		<!-- 打赏鼠标移出效果 -->
+		function outSpan(){
+			var donateSpan = document.getElementById("donateSpan");
+			donateSpan.style.color='#fff';
+			donateSpan.style.background='rgb(236,96,0)';
+		}
+	</script>
+</div>
+<! -- 添加捐赠模板 -->
+
 </article>
 
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式："><span class="toc-number">1.</span> <span class="toc-text">命令格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用范例"><span class="toc-number">2.</span> <span class="toc-text">使用范例</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
 
 
 
 
 
+<div class="bdsharebuttonbox bdshare-button-style2-24" >
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
-  
-  
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/09/15/Linux常用命令之一：scp 远程拷贝/" data-title="Linux常用命令之一 ：scp 跨机远程拷贝" data-url="http://yoursite.com/2016/09/15/Linux常用命令之一：scp 远程拷贝/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"angdychen"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/09/20/为Hexo博客添加打赏功能/" title="上一篇: Hexo博客美化之一：添加打赏功能">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/09/13/设计模式之一/" title="下一篇: 设计模式之一：单例模式">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/为Hexo博客添加打赏功能/">Hexo博客美化之一：添加打赏功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/">Linux常用命令之一 ：scp 跨机远程拷贝</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/13/设计模式之一/">设计模式之一：单例模式</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
