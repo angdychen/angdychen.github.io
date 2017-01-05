@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo博客美化之一：添加打赏功能 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="为hexo博客添加打赏功能，以spfk主题为例，其他主题方法类似。基本思路是将微信和支付宝的收款二维码放到每篇文章页面的最后，打赏的时候扫描二维码即可。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客美化之一：添加打赏功能">
+<meta property="og:url" content="http://yoursite.com/2016/09/20/为Hexo博客添加打赏功能/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="为hexo博客添加打赏功能，以spfk主题为例，其他主题方法类似。基本思路是将微信和支付宝的收款二维码放到每篇文章页面的最后，打赏的时候扫描二维码即可。">
+<meta property="og:updated_time" content="2016-10-20T13:18:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo博客美化之一：添加打赏功能">
+<meta name="twitter:description" content="为hexo博客添加打赏功能，以spfk主题为例，其他主题方法类似。基本思路是将微信和支付宝的收款二维码放到每篇文章页面的最后，打赏的时候扫描二维码即可。">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Andy Chen</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">只要从现在开始努力，最坏不过大器晚成。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/angdychen" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/chenwenfeng" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="/＃" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="/＃" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="/＃" title="twitter">twitter</a>
+                            
+                                <a class="fl facebook" target="_blank" href="#" title="facebook">facebook</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/打赏功能/" style="font-size: 10px;">打赏功能</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.pansousou.cn">盘搜搜</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Andy Chen</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Andy Chen</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">只要从现在开始努力，最坏不过大器晚成。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/angdychen" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/chenwenfeng" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="/＃" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="/＃" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="/＃" title="twitter">twitter</a>
+                    
+                        <a class="facebook" target="_blank" href="#" title="facebook">facebook</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-为Hexo博客添加打赏功能" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/20/为Hexo博客添加打赏功能/" class="article-date">
+      <time datetime="2016-09-20T15:36:34.000Z" itemprop="datePublished">2016-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo博客美化之一：添加打赏功能
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Hexo博客美化/">Hexo博客美化</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/打赏功能/">打赏功能</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>为hexo博客添加打赏功能，以<a href="https://github.com/luuman/hexo-theme-spfk" target="_blank" rel="external">spfk主题</a>为例，其他主题方法类似。基本思路是将微信和支付宝的收款二维码放到每篇文章页面的最后，打赏的时候扫描二维码即可。</p>
+<a id="more"></a>
+<h2 id="添加打赏模块"><a href="#添加打赏模块" class="headerlink" title="添加打赏模块"></a>添加打赏模块</h2><p>在<code>spfk\layout\_partial</code>下新建<code>donate.ejs</code>模版，输入以下内容：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 添加打赏模块 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> =<span class="string">"post-donate"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"donate_board"</span> <span class="attr">class</span>=<span class="string">"donate_bar center"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"donateButton"</span> <span class="attr">onclick</span>=<span class="string">"donate()"</span>&gt;</span></div><div class="line">        	<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"donateSpan"</span> <span class="attr">onmouseover</span>=<span class="string">"overSpan()"</span> <span class="attr">onmouseout</span>=<span class="string">"outSpan()"</span>&gt;</span></div><div class="line">        	赏</div><div class="line">        	<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">       	<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"donate_txt"</span>&gt;</span></div><div class="line">       		&amp;uarr;<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	   		<span class="tag">&lt;<span class="name">%=theme.donate.donate_message%</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"donateImage"</span> <span class="attr">display:none</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 自己的支付宝打赏二维码图片 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/img/alipay.jpg"</span> <span class="attr">alt</span>=<span class="string">"支付宝打赏"</span>&gt;</span> </div><div class="line">		<span class="comment">&lt;!-- 自己的支付宝打赏二维码图片 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/img/wechatpay.jpg"</span> <span class="attr">alt</span>=<span class="string">"微信打赏"</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="xml"></span></div><div class="line">		<span class="comment">&lt;!-- 打赏按钮点击效果 --&gt;</span></div><div class="line">		function donate()&#123;</div><div class="line">			var donateImage = document.getElementById("donateImage");</div><div class="line">			if(donateImage.style.display!='block')&#123;</div><div class="line">				donateImage.style.display='block';</div><div class="line">				overSpan();</div><div class="line">			&#125;</div><div class="line">			else&#123;</div><div class="line">				donateImage.style.display='none';</div><div class="line">				outSpan();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">&lt;!-- 打赏鼠标移入效果 --&gt;</span></div><div class="line">		function overSpan()&#123;</div><div class="line">			var donateSpan = document.getElementById("donateSpan");</div><div class="line">			donateSpan.style.color='rgb(236,96,0)';</div><div class="line">			donateSpan.style.background='rgb(204,204,204)';</div><div class="line">		&#125;</div><div class="line">		<span class="comment">&lt;!-- 打赏鼠标移出效果 --&gt;</span></div><div class="line">		function outSpan()&#123;</div><div class="line">			var donateSpan = document.getElementById("donateSpan");</div><div class="line">			donateSpan.style.color='#fff';</div><div class="line">			donateSpan.style.background='rgb(236,96,0)';</div><div class="line">		&#125;</div><div class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 添加打赏模板 --&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="设置打赏模板样式"><a href="#设置打赏模板样式" class="headerlink" title="设置打赏模板样式"></a>设置打赏模板样式</h2><p>在<code>spfk\source\css\_partial</code>下新建<code>donate.styl</code>样式，输入以下内容：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"> &lt;!<span class="selector-tag">--</span> 添加打赏样式 <span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.donate_bar</span> &#123;</div><div class="line">	<span class="attribute">text-align</span>: center;</div><div class="line">	<span class="attribute">margin-top</span>: <span class="number">2%</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.donate_bar</span> <span class="selector-tag">a</span><span class="selector-class">.btn_donate</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">	<span class="attribute">background-position</span>: <span class="number">0</span> -<span class="number">82px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.donate_bar</span> <span class="selector-class">.donate_txt</span> &#123;</div><div class="line">	<span class="attribute">display</span>: block;</div><div class="line">	<span class="attribute">color</span>: <span class="number">#9d9d9d</span>;</div><div class="line">	<span class="attribute">font</span>: <span class="number">14px</span>/<span class="number">2</span> <span class="string">"Microsoft Yahei"</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.donate_bar</span><span class="selector-class">.hidden</span>&#123;</div><div class="line">	<span class="attribute">display</span>: none</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#donateButton</span> &#123;</div><div class="line">	<span class="attribute">cursor</span>: pointer;</div><div class="line">	<span class="attribute">border</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">outline</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">border-radius</span>: <span class="number">100%</span>;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">letter-spacing</span>: normal;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#donateSpan</span> &#123;</div><div class="line">	<span class="attribute">display</span>: inline-block;</div><div class="line">	<span class="attribute">width</span>: <span class="number">70px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">70px</span>;</div><div class="line">	<span class="attribute">border-radius</span>: <span class="number">100%</span>;</div><div class="line">	<span class="attribute">color</span>: <span class="built_in">rgb</span>(255, 255, 255);</div><div class="line">	<span class="attribute">font-weight</span>: <span class="number">400</span>;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">35px</span>;</div><div class="line">	<span class="attribute">line-height</span>: <span class="number">70px</span>;</div><div class="line">	<span class="attribute">font-family</span>: microsofty;</div><div class="line">	<span class="attribute">background</span>: <span class="built_in">rgb</span>(236, 96, 0);</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#donateImage</span> &#123;</div><div class="line">	<span class="attribute">display</span>: none;</div><div class="line">	<span class="attribute">height</span>: <span class="number">210px</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">420px</span>;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">10px</span> auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#donateImage</span> <span class="selector-tag">img</span>&#123;</div><div class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"> &lt;!<span class="selector-tag">--</span> 添加打赏样式 <span class="selector-tag">--</span></div></pre></td></tr></table></figure></p>
+<p>最后，记得在<code>spkf/source/css/style.styl</code>中添加引入语句：<code>@import &#39;_partial/donate&#39;</code></p>
+<h2 id="将打赏模块添加到文章中"><a href="#将打赏模块添加到文章中" class="headerlink" title="将打赏模块添加到文章中"></a>将打赏模块添加到文章中</h2><p>在<code>spkf\layout\_partial\article.ejs</code>中的<code>&lt;article&gt; &lt;/article&gt;</code>标签内添加如下内容（如果不是主页，且打赏模块存在），则将打赏模块添加到文章末尾：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;% <span class="keyword">if</span> (!index &amp;&amp; theme.donate &amp;&amp; post.donate!=<span class="literal">false</span>)&#123; %&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">donate</span>') %&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>通过修改配置文件内容<code>spkf\_config.yml</code>，我们可以打开或关闭打赏功能，设置打赏内容。如下：<br><figure class="highlight plain"><figcaption><span>(#angdychen@gmail.com 新添加 打赏功能）</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">donate:</div><div class="line">  #开启打赏</div><div class="line">  donate: true</div><div class="line">  #打赏内容</div><div class="line">  donate_message: 我知道你不会点的，但是万一呢？万一点了呢？</div></pre></td></tr></table></figure></p>
+<p>到此，你就可以看到与本博客<a href="angdychen.github.io">Andy Chen</a>相同效果的打赏模块了。也许不一定有人会打赏，但是万一呢？万一呢？万一有人打赏呢？我会笑醒了起来再更新一博的！</p>
+<p><hr><br> 如有疑问及建议，欢迎留言讨论！<br>（留言模块，采用多说系统，后续将更新定制博客留言模块一文）</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/09/20/为Hexo博客添加打赏功能/">Hexo博客美化之一：添加打赏功能</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Andy Chen 的个人博客">Andy Chen</a></p>
+        <p><span>发布时间:</span>2016年09月20日 - 23时36分</p>
+        <p><span>最后更新:</span>2016年10月20日 - 21时18分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/20/为Hexo博客添加打赏功能/" title="Hexo博客美化之一：添加打赏功能">http://yoursite.com/2016/09/20/为Hexo博客添加打赏功能/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/20/为Hexo博客添加打赏功能/　　作者: Andy Chen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/13/设计模式之一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式之一：单例模式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+  
+  <! -- 添加捐赠模块 -->
+<div class ="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <button id="donateButton" onclick="donate()">
+        	<span id="donateSpan" onmouseover="overSpan()" onmouseout="outSpan()">
+        	赏
+        	</span>
+        </button>
+       	<span class="donate_txt">
+       		&uarr;<br>
+	   		我知道你不会点的，但是万一呢？万一点了呢？
+        </span>
+        <br>
+     </div>  
+    <div id="donateImage" display:none>
+		<!-- 自己的支付宝打赏二维码图片 -->
+		<img src="/img/alipay.jpg" alt="支付宝打赏"> 
+		<!-- 自己的支付宝打赏二维码图片 -->
+		<img src="/img/wechatpay.jpg" alt="微信打赏">  
+    </div>
+
+	<script type="text/javascript">
+		<!-- 打赏按钮点击效果 -->
+		function donate(){
+			var donateImage = document.getElementById("donateImage");
+			if(donateImage.style.display!='block')
+			{
+				donateImage.style.display='block';
+				overSpan();
+			}
+			else
+			{
+				donateImage.style.display='none';
+				outSpan();
+			}
+		}
+		<!-- 打赏鼠标移入效果 -->
+		function overSpan(){
+			var donateSpan = document.getElementById("donateSpan");
+			donateSpan.style.color='rgb(236,96,0)';
+			donateSpan.style.background='rgb(204,204,204)';
+		}
+		<!-- 打赏鼠标移出效果 -->
+		function outSpan(){
+			var donateSpan = document.getElementById("donateSpan");
+			donateSpan.style.color='#fff';
+			donateSpan.style.background='rgb(236,96,0)';
+		}
+	</script>
+</div>
+<! -- 添加捐赠模板 -->
+
+</article>
+
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加打赏模块"><span class="toc-number">1.</span> <span class="toc-text">添加打赏模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置打赏模板样式"><span class="toc-number">2.</span> <span class="toc-text">设置打赏模板样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将打赏模块添加到文章中"><span class="toc-number">3.</span> <span class="toc-text">将打赏模块添加到文章中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改配置文件"><span class="toc-number">4.</span> <span class="toc-text">修改配置文件</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox bdshare-button-style2-24" >
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/09/20/为Hexo博客添加打赏功能/" data-title="Hexo博客美化之一：添加打赏功能" data-url="http://yoursite.com/2016/09/20/为Hexo博客添加打赏功能/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"angdychen"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/09/13/设计模式之一/" title="下一篇: 设计模式之一：单例模式">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/为Hexo博客添加打赏功能/">Hexo博客美化之一：添加打赏功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/13/设计模式之一/">设计模式之一：单例模式</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Andy Chen
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >高知到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 5;
+            var backgroundimg = "url(/background/bg-" + backgroundnum +".jpg)";
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
