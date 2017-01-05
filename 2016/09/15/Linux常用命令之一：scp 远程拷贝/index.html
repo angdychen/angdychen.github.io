@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/15/Linux常用命令之一：scp 远程拷贝/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="scp是secure copy的简写，用于远程文件拷贝(cp复制命令和其类似，不过cp命令只是在本机内进行拷贝，不能跨机器进行文件传输)，而且scp传输是加密的，常用于本地与服务器间文件的传递。命令格式：scp [参数] [原路径] [目标路径]">
-<meta property="og:updated_time" content="2017-01-05T16:15:02.000Z">
+<meta property="og:updated_time" content="2017-01-05T16:17:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令之一 ：scp 跨机远程拷贝">
 <meta name="twitter:description" content="scp是secure copy的简写，用于远程文件拷贝(cp复制命令和其类似，不过cp命令只是在本机内进行拷贝，不能跨机器进行文件传输)，而且scp传输是加密的，常用于本地与服务器间文件的传递。命令格式：scp [参数] [原路径] [目标路径]">
@@ -313,16 +313,16 @@
 </code></pre><p></p><p></p>
 <h2 id="使用范例"><a href="#使用范例" class="headerlink" title="使用范例"></a>使用范例</h2><p><strong><em>1.从本地将文件拷贝到服务器中</em></strong>    </p>
 <p><code>scp local_file remote_username@remote_ip:/remote_floder</code>      </p>
-<p> scp /tmp/demo.txt root@123.123.123.123:/usr/<br>说明：复制本地/tmp/目录下的文件demo.txt到远程服务器123.123.123.123的/usr/目录下</p>
+<p> scp /tmp/demo.txt root@123.123.123.123:/usr/<br>说明：复制本地/tmp/目录下的<strong>文件demo.txt</strong>到远程服务器123.123.123.123的/usr/目录下</p>
 <p> <strong><em>2.从本地将整个文件夹拷贝到服务器中</em></strong> </p>
 <p> <code>scp -r local_floder remote_username@remote_ip:/remote_floder</code> </p>
-<p>  scp -r /tmp/demo/   root@123.123.123.123:/usr/<br> 说明：复制本地/tmp/目录下的整个demo文件夹录下到远程服务器123.123.123.123的/usr/目录下   </p>
+<p>  scp -r /tmp/demo/   root@123.123.123.123:/usr/<br> 说明：复制本地/tmp/目录下的整个<strong>demo目录</strong>录下到远程服务器123.123.123.123的/usr/目录下   </p>
 <p> <strong><em>3.从远程将文件夹拷贝到本机</em></strong> </p>
 <p> <code>scp remote_username@remote_ip:/remote_file /tmp/</code> </p>
-<p>  scp root@123.123.123.123:/usr/demo.txt  /tmp/<br> 说明：将远程远程服务器123.123.123.123中/usr/目录下的demo.txt文件复制到本地/usr/目录下</p>
+<p>  scp root@123.123.123.123:/usr/demo.txt  /tmp/<br> 说明：将远程远程服务器123.123.123.123中/usr/目录下的<strong>demo.txt文件</strong>复制到本地/usr/目录下</p>
 <p> <strong><em>4.从远程将整个文件夹拷贝到本机中</em></strong> </p>
 <p> <code>scp -r remote_username@remote_ip:/remote_floder /tmp/demo/</code> </p>
-<p>  scp -r root@123.123.123.123:/usr  /tmp/demo/<br> 说明：将远程服务器123.123.123.123的/usr/整个目录全部复制到tmp/demo目录下</p>
+<p>  scp -r root@123.123.123.123:/usr  /tmp/demo/<br> 说明：将远程服务器123.123.123.123的<strong>/usr/整个目录</strong>全部复制到tmp/demo目录下</p>
 
       
     </div>
@@ -334,7 +334,7 @@
         <p><span>本文标题:</span><a href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/">Linux常用命令之一 ：scp 跨机远程拷贝</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Andy Chen 的个人博客">Andy Chen</a></p>
         <p><span>发布时间:</span>2016年09月15日 - 10时25分</p>
-        <p><span>最后更新:</span>2017年01月06日 - 00时15分</p>
+        <p><span>最后更新:</span>2017年01月06日 - 00时17分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/" title="Linux常用命令之一 ：scp 跨机远程拷贝">http://yoursite.com/2016/09/15/Linux常用命令之一：scp 远程拷贝/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/15/Linux常用命令之一：scp 远程拷贝/　　作者: Andy Chen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
