@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo博客美化之一：添加打赏功能 | Hexo</title>
+  <title>Nginx初探心得（一） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为hexo博客添加打赏功能，以spfk主题为例，其他主题方法类似。基本思路是将微信和支付宝的收款二维码放到每篇文章页面的最后，打赏的时候扫描二维码即可。">
+  <meta name="description" content="经常听到Web开发人员随口就是Nginx负载均衡，反向代理，请求分发……，心中一直疑惑，Nginx这个新生事物如何能迅速的威胁到老牌服务器 Apache 和 IIS ，它究竟有什么作用呢？它和Apache有什么区别呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo博客美化之一：添加打赏功能">
-<meta property="og:url" content="http://yoursite.com/2016/09/20/为Hexo博客添加打赏功能/index.html">
+<meta property="og:title" content="Nginx初探心得（一）">
+<meta property="og:url" content="http://yoursite.com/2016/09/16/Nginx初探心得/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="为hexo博客添加打赏功能，以spfk主题为例，其他主题方法类似。基本思路是将微信和支付宝的收款二维码放到每篇文章页面的最后，打赏的时候扫描二维码即可。">
-<meta property="og:updated_time" content="2016-10-20T13:18:23.000Z">
+<meta property="og:description" content="经常听到Web开发人员随口就是Nginx负载均衡，反向代理，请求分发……，心中一直疑惑，Nginx这个新生事物如何能迅速的威胁到老牌服务器 Apache 和 IIS ，它究竟有什么作用呢？它和Apache有什么区别呢？">
+<meta property="og:updated_time" content="2017-01-06T08:50:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo博客美化之一：添加打赏功能">
-<meta name="twitter:description" content="为hexo博客添加打赏功能，以spfk主题为例，其他主题方法类似。基本思路是将微信和支付宝的收款二维码放到每篇文章页面的最后，打赏的时候扫描二维码即可。">
+<meta name="twitter:title" content="Nginx初探心得（一）">
+<meta name="twitter:description" content="经常听到Web开发人员随口就是Nginx负载均衡，反向代理，请求分发……，心中一直疑惑，Nginx这个新生事物如何能迅速的威胁到老牌服务器 Apache 和 IIS ，它究竟有什么作用呢？它和Apache有什么区别呢？">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -240,11 +240,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-为Hexo博客添加打赏功能" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Nginx初探心得" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/09/20/为Hexo博客添加打赏功能/" class="article-date">
-      <time datetime="2016-09-20T15:36:34.000Z" itemprop="datePublished">2016-09-20</time>
+      <a href="/2016/09/16/Nginx初探心得/" class="article-date">
+      <time datetime="2016-09-16T01:15:42.000Z" itemprop="datePublished">2016-09-16</time>
 </a>
     </div>
   
@@ -257,7 +257,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo博客美化之一：添加打赏功能
+      Nginx初探心得（一）
     </h1>
   
 
@@ -266,13 +266,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo博客美化/">Hexo博客美化</a>
+    <a class="article-category-link" href="/categories/Nginx系列/">Nginx系列</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/打赏功能/">打赏功能</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC-安装纪录/">MAC 安装纪录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx-安装与配置/">Nginx 安装与配置</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -282,15 +282,80 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>为hexo博客添加打赏功能，以<a href="https://github.com/luuman/hexo-theme-spfk" target="_blank" rel="external">spfk主题</a>为例，其他主题方法类似。基本思路是将微信和支付宝的收款二维码放到每篇文章页面的最后，打赏的时候扫描二维码即可。</p>
-<a id="more"></a>
-<h2 id="添加打赏模块"><a href="#添加打赏模块" class="headerlink" title="添加打赏模块"></a>添加打赏模块</h2><p>在<code>spfk\layout\_partial</code>下新建<code>donate.ejs</code>模版，输入以下内容：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 添加打赏模块 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> =<span class="string">"post-donate"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"donate_board"</span> <span class="attr">class</span>=<span class="string">"donate_bar center"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"donateButton"</span> <span class="attr">onclick</span>=<span class="string">"donate()"</span>&gt;</span></div><div class="line">        	<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"donateSpan"</span> <span class="attr">onmouseover</span>=<span class="string">"overSpan()"</span> <span class="attr">onmouseout</span>=<span class="string">"outSpan()"</span>&gt;</span></div><div class="line">        	赏</div><div class="line">        	<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">       	<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"donate_txt"</span>&gt;</span></div><div class="line">       		&amp;uarr;<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	   		<span class="tag">&lt;<span class="name">%=theme.donate.donate_message%</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"donateImage"</span> <span class="attr">display:none</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 自己的支付宝打赏二维码图片 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/img/alipay.jpg"</span> <span class="attr">alt</span>=<span class="string">"支付宝打赏"</span>&gt;</span> </div><div class="line">		<span class="comment">&lt;!-- 自己的支付宝打赏二维码图片 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/img/wechatpay.jpg"</span> <span class="attr">alt</span>=<span class="string">"微信打赏"</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="xml"></span></div><div class="line">		<span class="comment">&lt;!-- 打赏按钮点击效果 --&gt;</span></div><div class="line">		function donate()&#123;</div><div class="line">			var donateImage = document.getElementById("donateImage");</div><div class="line">			if(donateImage.style.display!='block')&#123;</div><div class="line">				donateImage.style.display='block';</div><div class="line">				overSpan();</div><div class="line">			&#125;</div><div class="line">			else&#123;</div><div class="line">				donateImage.style.display='none';</div><div class="line">				outSpan();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">&lt;!-- 打赏鼠标移入效果 --&gt;</span></div><div class="line">		function overSpan()&#123;</div><div class="line">			var donateSpan = document.getElementById("donateSpan");</div><div class="line">			donateSpan.style.color='rgb(236,96,0)';</div><div class="line">			donateSpan.style.background='rgb(204,204,204)';</div><div class="line">		&#125;</div><div class="line">		<span class="comment">&lt;!-- 打赏鼠标移出效果 --&gt;</span></div><div class="line">		function outSpan()&#123;</div><div class="line">			var donateSpan = document.getElementById("donateSpan");</div><div class="line">			donateSpan.style.color='#fff';</div><div class="line">			donateSpan.style.background='rgb(236,96,0)';</div><div class="line">		&#125;</div><div class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 添加打赏模板 --&gt;</span></div></pre></td></tr></table></figure></p>
-<h2 id="设置打赏模板样式"><a href="#设置打赏模板样式" class="headerlink" title="设置打赏模板样式"></a>设置打赏模板样式</h2><p>在<code>spfk\source\css\_partial</code>下新建<code>donate.styl</code>样式，输入以下内容：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"> &lt;!<span class="selector-tag">--</span> 添加打赏样式 <span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.donate_bar</span> &#123;</div><div class="line">	<span class="attribute">text-align</span>: center;</div><div class="line">	<span class="attribute">margin-top</span>: <span class="number">2%</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.donate_bar</span> <span class="selector-tag">a</span><span class="selector-class">.btn_donate</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">	<span class="attribute">background-position</span>: <span class="number">0</span> -<span class="number">82px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.donate_bar</span> <span class="selector-class">.donate_txt</span> &#123;</div><div class="line">	<span class="attribute">display</span>: block;</div><div class="line">	<span class="attribute">color</span>: <span class="number">#9d9d9d</span>;</div><div class="line">	<span class="attribute">font</span>: <span class="number">14px</span>/<span class="number">2</span> <span class="string">"Microsoft Yahei"</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.donate_bar</span><span class="selector-class">.hidden</span>&#123;</div><div class="line">	<span class="attribute">display</span>: none</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#donateButton</span> &#123;</div><div class="line">	<span class="attribute">cursor</span>: pointer;</div><div class="line">	<span class="attribute">border</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">outline</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">border-radius</span>: <span class="number">100%</span>;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">letter-spacing</span>: normal;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#donateSpan</span> &#123;</div><div class="line">	<span class="attribute">display</span>: inline-block;</div><div class="line">	<span class="attribute">width</span>: <span class="number">70px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">70px</span>;</div><div class="line">	<span class="attribute">border-radius</span>: <span class="number">100%</span>;</div><div class="line">	<span class="attribute">color</span>: <span class="built_in">rgb</span>(255, 255, 255);</div><div class="line">	<span class="attribute">font-weight</span>: <span class="number">400</span>;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">35px</span>;</div><div class="line">	<span class="attribute">line-height</span>: <span class="number">70px</span>;</div><div class="line">	<span class="attribute">font-family</span>: microsofty;</div><div class="line">	<span class="attribute">background</span>: <span class="built_in">rgb</span>(236, 96, 0);</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#donateImage</span> &#123;</div><div class="line">	<span class="attribute">display</span>: none;</div><div class="line">	<span class="attribute">height</span>: <span class="number">210px</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">420px</span>;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">10px</span> auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#donateImage</span> <span class="selector-tag">img</span>&#123;</div><div class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"> &lt;!<span class="selector-tag">--</span> 添加打赏样式 <span class="selector-tag">--</span></div></pre></td></tr></table></figure></p>
-<p>最后，记得在<code>spkf/source/css/style.styl</code>中添加引入语句：<code>@import &#39;_partial/donate&#39;</code></p>
-<h2 id="将打赏模块添加到文章中"><a href="#将打赏模块添加到文章中" class="headerlink" title="将打赏模块添加到文章中"></a>将打赏模块添加到文章中</h2><p>在<code>spkf\layout\_partial\article.ejs</code>中的<code>&lt;article&gt; &lt;/article&gt;</code>标签内添加如下内容（如果不是主页，且打赏模块存在），则将打赏模块添加到文章末尾：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;% <span class="keyword">if</span> (!index &amp;&amp; theme.donate &amp;&amp; post.donate!=<span class="literal">false</span>)&#123; %&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">donate</span>') %&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure></p>
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>通过修改配置文件内容<code>spkf\_config.yml</code>，我们可以打开或关闭打赏功能，设置打赏内容。如下：<br><figure class="highlight plain"><figcaption><span>(#angdychen@gmail.com 新添加 打赏功能）</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">donate:</div><div class="line">  #开启打赏</div><div class="line">  donate: true</div><div class="line">  #打赏内容</div><div class="line">  donate_message: 我知道你不会点的，但是万一呢？万一点了呢？</div></pre></td></tr></table></figure></p>
-<p>到此，你就可以看到与本博客<a href="angdychen.github.io">Andy Chen</a>相同效果的打赏模块了。也许不一定有人会打赏，但是万一呢？万一呢？万一有人打赏呢？我会笑醒了起来再更新一博的！</p>
-<p><hr><br> 如有疑问及建议，欢迎留言讨论！<br>（留言模块，采用多说系统，后续将更新定制博客留言模块一文）</p>
+        <blockquote>
+<p>经常听到Web开发人员随口就是Nginx负载均衡，反向代理，请求分发……，心中一直疑惑，Nginx这个新生事物如何能迅速的威胁到老牌服务器 Apache 和 IIS ，它究竟有什么作用呢？它和Apache有什么区别呢？</p>
+</blockquote>
+   <a id="more"></a>
+<h2 id="Nginx的4个基本认识"><a href="#Nginx的4个基本认识" class="headerlink" title="Nginx的4个基本认识"></a>Nginx的4个基本认识</h2><pre><code>1. Nginx(&quot;enginx x&quot;)是一个高性能的HTTP和反向代理服务器，也是一个电子邮件（imap/pop3）服务器。
+2. Nginx是由老毛子的攻城狮lgor Sysoev为俄罗斯大型入口网站及搜索引擎Rambler设计的。
+3. Nginx代码完全使用C语言开发，具有占有内存少，并发能力强的特点。（🐷：别人的c语言肯定和我们的不一样）
+4. 在Linxu系统下，nginx采用epoll事件模型，使得其效率相当高效。
+</code></pre><hr>
+<h2 id="反向代理，正向代理"><a href="#反向代理，正向代理" class="headerlink" title="反向代理，正向代理"></a>反向代理，正向代理</h2><blockquote>
+<p>2.1 反向代理</p>
+</blockquote>
+<p>客户端A 向资源服务器（虚线框内的服务器组）发送请求（请求某张图片资源），接着反向代理服务器Z将判断请求资源为何内容（发现是图片请求，迅速将请求转发给图片服务器B），并将获得的请求内容返回给客户端A。整个过程中，客户端A 始终不知道反向代理服务器Z的存在，始终认为自己连接的就是图片服务器B。   </p>
+<pre><code>用途：
+1. 将防火墙外面的反向代理服务器Z提供给用户访问，利用服务器Z转发各种请求。
+2. 反向代理服务器Z还可以为后端的服务器集群提供负载均衡或为后端较慢的服务器提供缓冲服务。 
+</code></pre><blockquote>
+<p>2.2 正向代理   </p>
+</blockquote>
+<p>正向代理是一个位于用户A和目标服务器D之间的服务器（代理服务器Z），为了从目标服务器D取得内容，用户A向代理服务器Z发送一个请求并指定目标（服务器D），然后代理服务器Z向服务器D转发此请求并将获得的内容返回给客户端。客户端必须要进行一些特别的配置才能使用正向代理。   </p>
+<pre><code>用途：为防火墙内部的局域网提供Internet访问，保护局域网内的用户。      
+</code></pre><blockquote>
+<p>2.3 从安全性来讲</p>
+</blockquote>
+<ul>
+<li>正向代理允许客户端通过它访问任意的外网并隐藏客户端自身，因此你必须采取安全措施以确保仅为经过授权的客户端提供服务。（vpn就可以理解为典型的正向代理）  </li>
+<li>反向代理一般用于服务器端，反向代理对外是透明的，访问者并不知道自己访问的事一个代理。（部署在服务端的Nginx转发用户请求就是典型的反向代理的应用)</li>
+</ul>
+<hr>
+<h2 id="MAC上Nginx安装"><a href="#MAC上Nginx安装" class="headerlink" title="MAC上Nginx安装"></a>MAC上Nginx安装</h2><blockquote>
+<p>3.1 安装Homebrew</p>
+</blockquote>
+<p>Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件，可以说Homebrew就是mac下的apt-get, yum神器。    </p>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre><blockquote>
+<p>3.2 安装nginx    </p>
+</blockquote>
+<p>在命令行终端执行：    </p>
+<pre><code>brew install nginx 
+</code></pre><blockquote>
+<p>3.3 执行nginx</p>
+</blockquote>
+<p>在命令行终端执行：nginx。然后在浏览器地址栏输入：<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> 如果出现<strong>Welcome to nginx!</strong>，代表nginx安装成功了。</p>
+<pre><code>1. nginx安装所在位置：/usr/local/Cellar/nginx/
+2. nginx配置文件位置：/usr/local/etc/nginx/nginx.conf
+3. nginx服务器根目录：/usr/local/var/www
+</code></pre><h2 id="Nginx和Apache区别"><a href="#Nginx和Apache区别" class="headerlink" title="Nginx和Apache区别"></a>Nginx和Apache区别</h2><p>####相同点:####</p>
+<pre><code>1. 都是HTTP服务器软件
+2. 功能上都采用模块化结构设计
+3. 都支持通用的语言接口，如Java、PHP、Python、Prel等
+4. 支持正向、反向代理、虚拟主机、URL重写、压缩传输、SSL加密传输
+</code></pre><p>####不同点:####</p>
+<pre><code>1. Apache处理速度很慢，占用很多内存资源
+2. 功能上，Apache所有模块支持动静态编译，Nginx模块都是静态编译的
+3. 对Fcgi的支持，Apache支持的很不好，Nginx支持非常好
+4. 处理连接方式，Nginx支持epoll，Apache不支持
+5. 空间时用上， Nginx安装包仅几百k
+</code></pre><hr>
+<h2 id="Nginx的优势"><a href="#Nginx的优势" class="headerlink" title="Nginx的优势"></a>Nginx的优势</h2><blockquote>
+<ol>
+<li>作为Web服务器，Nginx处理静态文件、索引文件，自动索引的效率非常高。</li>
+<li>作为代理服务器，Nginx可以实现无缓存的反向代理加速，提高网站的运行速度。</li>
+<li>作为负载均衡服务器，Nginx既可以在内部直接支持Rails和PHP，也可以支持HTTP代理服务器对外进行服务，同时还支持简单的<strong>容错</strong>和利用算法进行负载均衡。</li>
+<li>在性能方面，Nginx是专门为性能优化而开发的，实现上非常注重效率。它采用内核Poll模型，可以支持更多的并发连接，最大可以支持对5万个并发连接数的响应，而且只占用很低的内存资源。</li>
+<li>在稳定性能方面，其采用了分阶段资源分配技术，使得CPU与内存的占用率非常低。官方表示，Nginx保持1万那个没有活动的连接，只占用2.5M内存，因此，类似DOS这样的攻击对Nginx来说基本上是没有任何作用的。</li>
+<li>在高性能方面，Nginx支持热部署，启动速度特别迅速，因此可以在不间断服务的情况下，对软件版本或者配置进行升级，即使运行数月也无需重新启动，几乎可以做到7*24小时不间断地运行。</li>
+</ol>
+</blockquote>
+<pre><code>Nginx具有很高的稳定性，支持热部署，代码质量非常高，代码很规范，手法成熟，模块扩展也很容易；采用了一些os提供的最新特性如对sendfile(Linux2.2+) ,  accept－filter(FreeBSD4.1+) , TCP_DEFER_ACCEPT(Linux2.4+)的支持，从而大大提高了性能。
+</code></pre><p>#####参考文献#####</p>
+<ul>
+<li><a href="http://blog.csdn.net/liutengteng130/article/details/46700939" target="_blank" rel="external"> Nginx系列（一）–nginx是什么？</a>    </li>
+<li><a href="http://www.jianshu.com/p/eefe6acc7514" target="_blank" rel="external">Nginx基础配置</a></li>
+</ul>
 
       
     </div>
@@ -299,13 +364,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/09/20/为Hexo博客添加打赏功能/">Hexo博客美化之一：添加打赏功能</a></p>
+        <p><span>本文标题:</span><a href="/2016/09/16/Nginx初探心得/">Nginx初探心得（一）</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Andy Chen 的个人博客">Andy Chen</a></p>
-        <p><span>发布时间:</span>2016年09月20日 - 23时36分</p>
-        <p><span>最后更新:</span>2016年10月20日 - 21时18分</p>
+        <p><span>发布时间:</span>2016年09月16日 - 09时15分</p>
+        <p><span>最后更新:</span>2017年01月06日 - 16时50分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/09/20/为Hexo博客添加打赏功能/" title="Hexo博客美化之一：添加打赏功能">http://yoursite.com/2016/09/20/为Hexo博客添加打赏功能/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/20/为Hexo博客添加打赏功能/　　作者: Andy Chen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/16/Nginx初探心得/" title="Nginx初探心得（一）">http://yoursite.com/2016/09/16/Nginx初探心得/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/16/Nginx初探心得/　　作者: Andy Chen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -318,9 +383,18 @@
 
 <nav id="article-nav">
   
+    <a href="/2016/09/20/为Hexo博客添加打赏功能/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Hexo博客美化之一：添加打赏功能
+        
+      </div>
+    </a>
   
-    <a href="/2016/09/16/Nginx初探心得/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Nginx初探心得（一）</div>
+  
+    <a href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux常用命令之一 ：scp 跨机远程拷贝</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -385,7 +459,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加打赏模块"><span class="toc-number">1.</span> <span class="toc-text">添加打赏模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置打赏模板样式"><span class="toc-number">2.</span> <span class="toc-text">设置打赏模板样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将打赏模块添加到文章中"><span class="toc-number">3.</span> <span class="toc-text">将打赏模块添加到文章中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改配置文件"><span class="toc-number">4.</span> <span class="toc-text">修改配置文件</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx的4个基本认识"><span class="toc-number">1.</span> <span class="toc-text">Nginx的4个基本认识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反向代理，正向代理"><span class="toc-number">2.</span> <span class="toc-text">反向代理，正向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MAC上Nginx安装"><span class="toc-number">3.</span> <span class="toc-text">MAC上Nginx安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx和Apache区别"><span class="toc-number">4.</span> <span class="toc-text">Nginx和Apache区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx的优势"><span class="toc-number">5.</span> <span class="toc-text">Nginx的优势</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -432,7 +506,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/09/20/为Hexo博客添加打赏功能/" data-title="Hexo博客美化之一：添加打赏功能" data-url="http://yoursite.com/2016/09/20/为Hexo博客添加打赏功能/"></div>
+    <div class="ds-thread" data-thread-key="2016/09/16/Nginx初探心得/" data-title="Nginx初探心得（一）" data-url="http://yoursite.com/2016/09/16/Nginx初探心得/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -455,11 +529,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/09/20/为Hexo博客添加打赏功能/" title="上一篇: Hexo博客美化之一：添加打赏功能">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/09/16/Nginx初探心得/" title="下一篇: Nginx初探心得（一）">
+            <a href="/2016/09/15/Linux常用命令之一：scp 远程拷贝/" title="下一篇: Linux常用命令之一 ：scp 跨机远程拷贝">
                 <i class="fa fa-angle-right"></i>
             </a>
         
