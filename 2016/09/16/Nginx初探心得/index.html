@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/16/Nginx初探心得/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="经常听到Web开发人员随口就是Nginx负载均衡，反向代理，请求分发……，心中一直疑惑，Nginx这个新生事物如何能迅速的威胁到老牌服务器 Apache 和 IIS ，它究竟有什么作用呢？它和Apache有什么区别呢？">
-<meta property="og:updated_time" content="2017-01-06T08:50:10.000Z">
+<meta property="og:updated_time" content="2017-01-06T09:00:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx初探心得（一）">
 <meta name="twitter:description" content="经常听到Web开发人员随口就是Nginx负载均衡，反向代理，请求分发……，心中一直疑惑，Nginx这个新生事物如何能迅速的威胁到老牌服务器 Apache 和 IIS ，它究竟有什么作用呢？它和Apache有什么区别呢？">
@@ -286,12 +286,13 @@
 <p>经常听到Web开发人员随口就是Nginx负载均衡，反向代理，请求分发……，心中一直疑惑，Nginx这个新生事物如何能迅速的威胁到老牌服务器 Apache 和 IIS ，它究竟有什么作用呢？它和Apache有什么区别呢？</p>
 </blockquote>
    <a id="more"></a>
-<h2 id="Nginx的4个基本认识"><a href="#Nginx的4个基本认识" class="headerlink" title="Nginx的4个基本认识"></a>Nginx的4个基本认识</h2><pre><code>1. Nginx(&quot;enginx x&quot;)是一个高性能的HTTP和反向代理服务器，也是一个电子邮件（imap/pop3）服务器。
+<h2 id="Nginx的4个基本认识"><a href="#Nginx的4个基本认识" class="headerlink" title="Nginx的4个基本认识"></a>Nginx的4个基本认识</h2><hr>
+<pre><code>1. Nginx(&quot;enginx x&quot;)是一个高性能的HTTP和反向代理服务器，也是一个电子邮件（imap/pop3）服务器。
 2. Nginx是由老毛子的攻城狮lgor Sysoev为俄罗斯大型入口网站及搜索引擎Rambler设计的。
 3. Nginx代码完全使用C语言开发，具有占有内存少，并发能力强的特点。（🐷：别人的c语言肯定和我们的不一样）
 4. 在Linxu系统下，nginx采用epoll事件模型，使得其效率相当高效。
-</code></pre><hr>
-<h2 id="反向代理，正向代理"><a href="#反向代理，正向代理" class="headerlink" title="反向代理，正向代理"></a>反向代理，正向代理</h2><blockquote>
+</code></pre><h2 id="反向代理，正向代理"><a href="#反向代理，正向代理" class="headerlink" title="反向代理，正向代理"></a>反向代理，正向代理</h2><hr>
+<blockquote>
 <p>2.1 反向代理</p>
 </blockquote>
 <p>客户端A 向资源服务器（虚线框内的服务器组）发送请求（请求某张图片资源），接着反向代理服务器Z将判断请求资源为何内容（发现是图片请求，迅速将请求转发给图片服务器B），并将获得的请求内容返回给客户端A。整个过程中，客户端A 始终不知道反向代理服务器Z的存在，始终认为自己连接的就是图片服务器B。   </p>
@@ -310,8 +311,8 @@
 <li>正向代理允许客户端通过它访问任意的外网并隐藏客户端自身，因此你必须采取安全措施以确保仅为经过授权的客户端提供服务。（vpn就可以理解为典型的正向代理）  </li>
 <li>反向代理一般用于服务器端，反向代理对外是透明的，访问者并不知道自己访问的事一个代理。（部署在服务端的Nginx转发用户请求就是典型的反向代理的应用)</li>
 </ul>
-<hr>
-<h2 id="MAC上Nginx安装"><a href="#MAC上Nginx安装" class="headerlink" title="MAC上Nginx安装"></a>MAC上Nginx安装</h2><blockquote>
+<h2 id="MAC上Nginx安装"><a href="#MAC上Nginx安装" class="headerlink" title="MAC上Nginx安装"></a>MAC上Nginx安装</h2><hr>
+<blockquote>
 <p>3.1 安装Homebrew</p>
 </blockquote>
 <p>Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件，可以说Homebrew就是mac下的apt-get, yum神器。    </p>
@@ -328,19 +329,20 @@
 <pre><code>1. nginx安装所在位置：/usr/local/Cellar/nginx/
 2. nginx配置文件位置：/usr/local/etc/nginx/nginx.conf
 3. nginx服务器根目录：/usr/local/var/www
-</code></pre><h2 id="Nginx和Apache区别"><a href="#Nginx和Apache区别" class="headerlink" title="Nginx和Apache区别"></a>Nginx和Apache区别</h2><p>####相同点:####</p>
+</code></pre><h2 id="Nginx和Apache区别"><a href="#Nginx和Apache区别" class="headerlink" title="Nginx和Apache区别"></a>Nginx和Apache区别</h2><hr>
+<p>相同点:</p>
 <pre><code>1. 都是HTTP服务器软件
 2. 功能上都采用模块化结构设计
 3. 都支持通用的语言接口，如Java、PHP、Python、Prel等
 4. 支持正向、反向代理、虚拟主机、URL重写、压缩传输、SSL加密传输
-</code></pre><p>####不同点:####</p>
+</code></pre><p>不同点:</p>
 <pre><code>1. Apache处理速度很慢，占用很多内存资源
 2. 功能上，Apache所有模块支持动静态编译，Nginx模块都是静态编译的
 3. 对Fcgi的支持，Apache支持的很不好，Nginx支持非常好
 4. 处理连接方式，Nginx支持epoll，Apache不支持
 5. 空间时用上， Nginx安装包仅几百k
-</code></pre><hr>
-<h2 id="Nginx的优势"><a href="#Nginx的优势" class="headerlink" title="Nginx的优势"></a>Nginx的优势</h2><blockquote>
+</code></pre><h2 id="Nginx的优势"><a href="#Nginx的优势" class="headerlink" title="Nginx的优势"></a>Nginx的优势</h2><hr>
+<blockquote>
 <ol>
 <li>作为Web服务器，Nginx处理静态文件、索引文件，自动索引的效率非常高。</li>
 <li>作为代理服务器，Nginx可以实现无缓存的反向代理加速，提高网站的运行速度。</li>
@@ -350,8 +352,11 @@
 <li>在高性能方面，Nginx支持热部署，启动速度特别迅速，因此可以在不间断服务的情况下，对软件版本或者配置进行升级，即使运行数月也无需重新启动，几乎可以做到7*24小时不间断地运行。</li>
 </ol>
 </blockquote>
-<pre><code>Nginx具有很高的稳定性，支持热部署，代码质量非常高，代码很规范，手法成熟，模块扩展也很容易；采用了一些os提供的最新特性如对sendfile(Linux2.2+) ,  accept－filter(FreeBSD4.1+) , TCP_DEFER_ACCEPT(Linux2.4+)的支持，从而大大提高了性能。
-</code></pre><p>#####参考文献#####</p>
+<p>Nginx具有很高的稳定性，支持热部署，代码质量非常高，代码很规范，手法成熟，模块扩展也很容易；采用了一些os提供的最新特性如对sendfile(Linux2.2+) ,  accept－filter(FreeBSD4.1+) , TCP_DEFER_ACCEPT(Linux2.4+)的支持，从而大大提高了性能。</p>
+<p><hr></p>
+<blockquote>
+<p>参考文献:    </p>
+</blockquote>
 <ul>
 <li><a href="http://blog.csdn.net/liutengteng130/article/details/46700939" target="_blank" rel="external"> Nginx系列（一）–nginx是什么？</a>    </li>
 <li><a href="http://www.jianshu.com/p/eefe6acc7514" target="_blank" rel="external">Nginx基础配置</a></li>
@@ -367,7 +372,7 @@
         <p><span>本文标题:</span><a href="/2016/09/16/Nginx初探心得/">Nginx初探心得（一）</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Andy Chen 的个人博客">Andy Chen</a></p>
         <p><span>发布时间:</span>2016年09月16日 - 09时15分</p>
-        <p><span>最后更新:</span>2017年01月06日 - 16时50分</p>
+        <p><span>最后更新:</span>2017年01月06日 - 17时00分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/09/16/Nginx初探心得/" title="Nginx初探心得（一）">http://yoursite.com/2016/09/16/Nginx初探心得/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/16/Nginx初探心得/　　作者: Andy Chen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
